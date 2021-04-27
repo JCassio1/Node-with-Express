@@ -11,6 +11,10 @@ app.get("/contact", function(req, res){
   res.send("Email me at joselsondias@hotmail.com");
 });
 
+app.post("/", function(req, res){
+  res.send("Got it. cheers, m8")
+});
+
 
 //Listening
 app.listen(3000, function(){
