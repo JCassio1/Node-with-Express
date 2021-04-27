@@ -15,8 +15,26 @@ app.get("/contact", function(req, res){
 
 app.post("/", function(req, res){
 
-  console.log(req.body.number1);
-  res.send("Got it. cheers, m8")
+  var number1 = Number(req.body.number1);
+  var number2 = Number(req.body.number2);
+
+  var result = number1 + number2;
+
+  res.send("Quick!!! Your result is " + result);
+});
+
+app.get("/bmicalculator", function(req, res){
+  res.sendFile(__dirname + "/bmicalculator.html");
+});
+
+app.post("/bmicalculator", function(req, res){
+
+  var weight = parseFloat(req.body.weight);
+  var height = parseFloat(req.body.height);
+
+  var result = weight / Math.pow(height,2);
+
+  res.send("Quick!!! Your BMI is " + result);
 });
 
 
